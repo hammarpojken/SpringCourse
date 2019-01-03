@@ -1,8 +1,0 @@
-/target
-.mvn
-.settings
-.gitignore
-.classpath
-.project
-mvnw
-mvnw.cmd
