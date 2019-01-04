@@ -1,4 +1,4 @@
-package com.hammar.spring.basics.udemyspringlevel1.basics;
+package com.hammar.spring.basics.udemyspringlevel.basics;
 
 import org.springframework.stereotype.Component;
 

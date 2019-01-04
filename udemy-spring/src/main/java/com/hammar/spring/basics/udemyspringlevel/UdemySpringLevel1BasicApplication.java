@@ -1,10 +1,10 @@
-package com.hammar.spring.basics.udemyspringlevel1;
+package com.hammar.spring.basics.udemyspringlevel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.hammar.spring.basics.udemyspringlevel1.basics.BinarySearchImpl;
+import com.hammar.spring.basics.udemyspringlevel.basics.BinarySearchImpl;
 
 
 @SpringBootApplication

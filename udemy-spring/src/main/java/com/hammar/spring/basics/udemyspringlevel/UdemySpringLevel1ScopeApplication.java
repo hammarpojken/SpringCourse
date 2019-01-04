@@ -1,4 +1,4 @@
-package com.hammar.spring.basics.udemyspringlevel1;
+package com.hammar.spring.basics.udemyspringlevel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,12 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-
-import com.hammar.spring.basics.udemyspringlevel1.scope.PersonDao;
-/* Using scope in Jdbc class with proxyMode to get
- * a new instance of the jdbc class each time the get method
- * is called in PersonDao.
- */
+import com.hammar.spring.basics.udemyspringlevel.scope.PersonDao;
 
 @SpringBootApplication
 public class UdemySpringLevel1ScopeApplication {

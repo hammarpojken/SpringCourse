@@ -1,4 +1,4 @@
-package com.hammar.spring.basics.udemyspringlevel1.scope;
+package com.hammar.spring.basics.udemyspringlevel.scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
