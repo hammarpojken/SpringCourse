@@ -22,7 +22,7 @@ public class BinarySearchImpl {
 	public int binarySearch(int [] numbers, int number) {
 		int [] sortedNumbers = sortAlgo.sort(numbers);
 		System.out.println(sortAlgo);
-		return 0;
+		return sortedNumbers[0];
 		
 	}
 	// Called after the bean has been created
