@@ -6,33 +6,37 @@ import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
-//Defines a bean
-@Component
+@Service
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearchImpl {
 	
-	Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	
-	// Automatically creates the dependency
-	@Autowired
-	private SortAlgorithm sortAlgo;
-	
+	private Logger logger = LoggerFactory.getLogger(this.getClass()); 
 
-	public int binarySearch(int [] numbers, int number) {
-		int [] sortedNumbers = sortAlgo.sort(numbers);
-		System.out.println(sortAlgo);
-		return sortedNumbers[0];
-		
+	@Autowired
+	@Qualifier("bubble")
+	private SortAlgorithm sortAlgorithm;
+	
+	public int binarySearch(int[] numbers, int numberToSearchFor) {
+
+		int[] sortedNumbers = sortAlgorithm.sort(numbers);
+		System.out.println(sortAlgorithm);
+		// Search the array
+		return 3;
 	}
-	// Called after the bean has been created
+	
 	@PostConstruct
 	public void postConstruct() {
-		LOGGER.info("postConstruct");
+		logger.info("postConstruct");
 	}
-	// Called before the bean is destroyed
+
 	@PreDestroy
 	public void preDestroy() {
-		LOGGER.info("preDestroy");
+		logger.info("preDestroy");
 	}
+
 }

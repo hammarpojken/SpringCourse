@@ -3,11 +3,14 @@ package com.hammar.spring.basics.udemyspringlevel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.hammar.spring.basics.udemyspringlevel.basics.BinarySearchImpl;
 
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class UdemySpringLevel1BasicApplication {
 
 	public static void main(String[] args) {
