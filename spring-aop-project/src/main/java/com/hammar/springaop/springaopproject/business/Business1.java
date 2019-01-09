@@ -1,10 +1,12 @@
-package com.hammar.springaop.springaopproject;
+package com.hammar.springaop.springaopproject.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hammar.springaop.springaopproject.data.Dao1;
+
 @Service
-public class Buiness1 {
+public class Business1 {
 	
 	@Autowired
 	private Dao1 dao1;

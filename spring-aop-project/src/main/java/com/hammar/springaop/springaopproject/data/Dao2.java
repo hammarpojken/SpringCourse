@@ -1,4 +1,4 @@
-package com.hammar.springaop.springaopproject;
+package com.hammar.springaop.springaopproject.data;
 
 import org.springframework.stereotype.Repository;
 
