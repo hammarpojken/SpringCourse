@@ -1,6 +1,5 @@
 package com.hammar.springaop.springaopproject.aspect;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -14,7 +13,7 @@ public class AfterAopAspect {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@Around("execution(* com.hammar.springaop.springaopproject.business.*.*(..))")
+	@Around("com.hammar.springaop.springaopproject.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		joinPoint.proceed();
