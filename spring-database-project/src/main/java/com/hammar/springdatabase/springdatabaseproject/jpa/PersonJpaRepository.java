@@ -19,5 +19,9 @@ public class PersonJpaRepository {
 	public Person findById(int id) {
 		return em.find(Person.class, id);
 	}
+	
+	public Person update(Person person) {
+		return em.merge(person);
+	}
 
 }
