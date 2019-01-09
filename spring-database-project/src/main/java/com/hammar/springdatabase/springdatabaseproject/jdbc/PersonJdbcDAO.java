@@ -1,11 +1,14 @@
 package com.hammar.springdatabase.springdatabaseproject.jdbc;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.hammar.springdatabase.springdatabaseproject.entity.Person;
@@ -14,12 +17,27 @@ import com.hammar.springdatabase.springdatabaseproject.entity.Person;
 public class PersonJdbcDAO {
 	
 	@Autowired
-	JdbcTemplate jdbcTemplate;   
+	JdbcTemplate jdbcTemplate;
+	
+	class PersonRowMapper implements RowMapper<Person> {
+
+		@Override
+		public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Person person = new Person();
+			person.setId(rs.getInt("id"));
+			person.setName(rs.getString("name"));
+			person.setLocation(rs.getString("location"));
+			person.setBirthDate(rs.getTimestamp("birth_date"));
+			
+			return person;
+		}
+		
+	}
 	
 	
 	public List<Person> findAll() {
 		return jdbcTemplate.query("select * from person", 
-				new BeanPropertyRowMapper<Person>(Person.class));
+				new PersonRowMapper());
 	}
 	public List<Person> findByName(String name) {
 		return jdbcTemplate.query
