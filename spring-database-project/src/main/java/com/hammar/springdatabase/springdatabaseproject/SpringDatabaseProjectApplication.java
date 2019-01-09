@@ -25,6 +25,8 @@ public class SpringDatabaseProjectApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info(" Persons in the h2 DB {}", dao.findAll());
+		logger.info(" User with id 10003 {}", dao.findById(10003));
+		logger.info(" Users with name niclas {}", dao.findByName("Niclas"));
 		
 	}
 
