@@ -31,8 +31,8 @@ public class JpaProjectApplication implements CommandLineRunner {
 		logger.info(" Inserting new person {}", repo.update(new Person("Martin", "Trosa", new Date())));
 		logger.info(" Updated person {}", repo.update(new Person(10001,"Robin", "Malmö", new Date())));
 		
+		logger.info(" Persons in the h2 DB {}", repo.findAll());
 		/*		
-		logger.info(" Persons in the h2 DB {}", dao.findAll());
 		logger.info(" Users with name niclas {}", dao.findByName("Niclas"));
 		logger.info(" Deleted rows {}", dao.deleteById(10005));
 	*/	
