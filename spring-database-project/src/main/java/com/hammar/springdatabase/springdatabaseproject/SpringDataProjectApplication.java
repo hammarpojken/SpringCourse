@@ -11,25 +11,25 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.hammar.springdatabase.springdatabaseproject.entity.Person;
-import com.hammar.springdatabase.springdatabaseproject.jpa.PersonJpaRepository;
+import com.hammar.springdatabase.springdatabaseproject.springdata.PersonSpringDataRepository;
 
-//@SpringBootApplication
-public class JpaProjectApplication implements CommandLineRunner {
+@SpringBootApplication
+public class SpringDataProjectApplication implements CommandLineRunner {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	PersonJpaRepository repo;
+	PersonSpringDataRepository repo;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(JpaProjectApplication.class, args);
+		SpringApplication.run(SpringDataProjectApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info(" User with id 10003 {}", repo.findById(10003));
-		logger.info(" Inserting new person {}", repo.update(new Person("Martin", "Trosa", new Date())));
-		logger.info(" Updated person {}", repo.update(new Person(10001,"Robin", "Malmö", new Date())));
+		logger.info(" Inserting new person {}", repo.save(new Person("Martin", "Trosa", new Date())));
+		logger.info(" Updated person {}", repo.save(new Person(10001,"Robin", "Malmö", new Date())));
 		
 		logger.info(" Persons in the h2 DB {}", repo.findAll());
 		/*		
