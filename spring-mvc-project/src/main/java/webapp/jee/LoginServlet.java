@@ -1,4 +1,4 @@
-package jee;
+package webapp.jee;
 
 import java.io.IOException;
 
